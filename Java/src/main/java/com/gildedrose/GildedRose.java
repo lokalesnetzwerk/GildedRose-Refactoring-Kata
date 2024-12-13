@@ -1,12 +1,24 @@
 package com.gildedrose;
 
-class GildedRose {
-    Item[] items;
+import java.util.ArrayList;
+import java.util.List;
 
-    public GildedRose(Item[] items) {
-        this.items = items;
+class GildedRose {
+    
+    List<Updateable> updateables = new ArrayList<>();
+
+    public GildedRose(List<Updateable> updateables) {
+        this.updateables = updateables;
     }
 
+    public List<Updateable> newDayItemUpdate() {
+        for (Updateable updateable : updateables) {
+            updateable.updateQuality();
+        }
+        return updateables;
+    }
+    
+/*
     public void updateQuality() {
         for (int i = 0; i < items.length; i++) {
             if (!items[i].name.equals("Aged Brie")
@@ -59,4 +71,5 @@ class GildedRose {
             }
         }
     }
+*/
 }

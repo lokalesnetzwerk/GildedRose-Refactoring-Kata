@@ -10,23 +10,19 @@ class GildedRoseTest {
     @Test
     void foo() {
         CombinationApprovals.verifyAllCombinations(
-            this::doUpdateQuality,
-            new String[] {"foo", "Backstage passes to a TAFKAL80ETC concert", "Sulfuras, Hand of Ragnaros", "Aged Brie"},
-            new Integer[] {0, 1, 10, 11, 49, 50},
-            new Integer[] {0, 1, 10, 11, 49, 50, 80}
+                this::doUpdateQuality,
+                new String[] {"foo", "Aged Brie", "Backstage passes to a TAFKAL80ETC concert",  "Sulfuras, Hand of Ragnaros"},
+                new Integer[] {-1, 0, 1, 5, 6, 10, 11},
+                new Integer[] {0, 1, 49, 50}
         );
-
     }
 
-    String doUpdateQuality(String name, int sellIn, int quality) {
-        Item[] items = new Item[] {new Item(name, sellIn, quality)};
+    private String doUpdateQuality(String name, Integer sellIn, Integer quality) {
+        Item[] items = new Item[] { new Item(name, sellIn, quality) };
 
         GildedRose app = new GildedRose(items);
         app.updateQuality();
 
-        Item actual = items[0];
-
-        return "Name:" + actual.name + ",SellIn: " + actual.sellIn + ",Quality: " + actual.quality;
+        return itemPrinter(actual[0]);
     }
-
 }

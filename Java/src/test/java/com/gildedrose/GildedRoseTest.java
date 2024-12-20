@@ -26,7 +26,7 @@ class GildedRoseTest {
 
         Item actual = items[0];
 
-        return actual.name + ", sellIn: " + actual.sellIn + ", quality: " + actual.quality;
+        return "Name:" + actual.name + ",SellIn: " + actual.sellIn + ",Quality: " + actual.quality;
     }
 
 }

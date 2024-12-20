@@ -1,5 +1,6 @@
 package com.gildedrose;
 
+import org.approvaltests.combinations.CombinationApprovals;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -10,9 +11,9 @@ class GildedRoseTest {
     void foo() {
         CombinationApprovals.verifyAllCombinations(
             this::doUpdateQuality,
-            new String[] {"foo"},
-            new Integer[] {0, 1, 49, 50},
-            new Integer[] {0, 1, 49, 50}
+            new String[] {"foo", "Backstage passes to a TAFKAL80ETC concert", "Sulfuras, Hand of Ragnaros", "Aged Brie"},
+            new Integer[] {0, 1, 10, 11, 49, 50},
+            new Integer[] {0, 1, 10, 11, 49, 50, 80}
         );
 
     }

@@ -8,10 +8,24 @@ class GildedRoseTest {
 
     @Test
     void foo() {
-        Item[] items = new Item[] { new Item("foo", 0, 0) };
+        CombinationApprovals.verifyAllCombinations(
+            this::doUpdateQuality,
+            new String[] {"foo"},
+            new Integer[] {0, 1, 49, 50},
+            new Integer[] {0, 1, 49, 50}
+        );
+
+    }
+
+    String doUpdateQuality(String name, int sellIn, int quality) {
+        Item[] items = new Item[] {new Item(name, sellIn, quality)};
+
         GildedRose app = new GildedRose(items);
         app.updateQuality();
-        assertEquals("fixme", app.items[0].name);
+
+        Item actual = items[0];
+
+        return actual.name + ", sellIn: " + actual.sellIn + ", quality: " + actual.quality;
     }
 
 }

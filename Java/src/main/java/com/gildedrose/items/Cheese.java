@@ -23,7 +23,4 @@ public class Cheese extends Item {
 		}
 	}
 
-	private void reduceSellInBy1() {
-		this.sellIn = sellIn.decrease(1);
-	}
 }

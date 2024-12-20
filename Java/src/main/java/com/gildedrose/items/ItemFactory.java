@@ -4,6 +4,8 @@ import com.gildedrose.attributes.Quality;
 import com.gildedrose.attributes.SellIn;
 
 public class ItemFactory {
+	
+	private ItemFactory() {}
 
 	public static Item createItem(String name, Integer sellIn, Integer quality) {
 		return switch (name) {

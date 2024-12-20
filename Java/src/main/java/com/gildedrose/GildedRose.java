@@ -2,8 +2,6 @@ package com.gildedrose;
 
 import com.gildedrose.items.Item;
 
-import java.util.List;
-
 class GildedRose {
     
     Item[] items;

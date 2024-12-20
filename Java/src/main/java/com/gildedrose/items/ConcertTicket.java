@@ -26,8 +26,4 @@ public class ConcertTicket extends Item {
 			this.quality = new Quality(0);
 		}
 	}
-
-	private void reduceSellInBy1() {
-		this.sellIn = sellIn.decrease(1);
-	}
 }

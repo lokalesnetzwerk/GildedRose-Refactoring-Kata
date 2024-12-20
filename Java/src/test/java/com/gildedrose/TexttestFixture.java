@@ -4,8 +4,6 @@ import com.gildedrose.attributes.Quality;
 import com.gildedrose.attributes.SellIn;
 import com.gildedrose.items.Item;
 
-import java.util.Arrays;
-
 public class TexttestFixture {
     public static void main(String[] args) {
         System.out.println("OMGHAI!");

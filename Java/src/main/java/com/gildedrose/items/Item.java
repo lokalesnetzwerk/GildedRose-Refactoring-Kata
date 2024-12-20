@@ -34,7 +34,7 @@ public class Item implements Updateable {
 		}
 	}
 
-	private void reduceSellInBy1() {
+	public void reduceSellInBy1() {
 		this.sellIn = sellIn.decrease(1);
 	}
 }

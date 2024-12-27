@@ -11,6 +11,8 @@ public class ItemFactory {
             return new TicketItem(name, new SellIn(sellIn), new Quality(quality));
         } else if (name.equals("Aged Brie")) {
             return new CheeseItem(name, new SellIn(sellIn), new Quality(quality));
+        } else if (name.contains("Conjured")) {
+            return new ConjuredItem(name, new SellIn(sellIn), new Quality(quality));
         } else {
             return new CasualItem(name, new SellIn(sellIn), new Quality(quality));
         }

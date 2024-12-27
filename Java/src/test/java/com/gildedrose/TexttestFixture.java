@@ -5,7 +5,7 @@ public class TexttestFixture {
         System.out.println("OMGHAI!");
 
         Item[] items = new Item[]{
-            new CasualItem("+5 Dexterity Vest", new SellIn(10), new Quality(20)), //
+            ItemFactory.createItem("+5 Dexterity Vest", 10, 20), //
             new CheeseItem("Aged Brie", new SellIn(2), new Quality(0)), //
             new CasualItem("Elixir of the Mongoose", new SellIn(5), new Quality(7)), //
             new LegendaryItem("Sulfuras, Hand of Ragnaros", new SellIn(0), new Quality(80)), //
@@ -14,7 +14,7 @@ public class TexttestFixture {
             new TicketItem("Backstage passes to a TAFKAL80ETC concert", new SellIn(10), new Quality(49)),
             new TicketItem("Backstage passes to a TAFKAL80ETC concert", new SellIn(5), new Quality(49)),
             // this conjured item does not work properly yet
-            new CasualItem("Conjured Mana Cake", new SellIn(3), new Quality(6))};
+            ItemFactory.createItem("Conjured Mana Cake", 3, 6)};
 
         GildedRose app = new GildedRose(items);
 

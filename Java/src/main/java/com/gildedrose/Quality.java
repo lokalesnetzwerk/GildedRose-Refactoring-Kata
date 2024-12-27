@@ -15,6 +15,6 @@ public class Quality {
     }
 
     void increase(int add) {
-        this.value = Math.min(MAX_VALUE, value - add);
+        this.value = Math.min(MAX_VALUE, value + add);
     }
 }

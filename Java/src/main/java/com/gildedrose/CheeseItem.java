@@ -7,14 +7,22 @@ public class CheeseItem extends Item implements Updateable {
 
     @Override
     public void updateQuality() {
-        if (this.quality < 50) {
-            this.quality = this.quality + 1;
-        }
-        this.sellIn = this.sellIn - 1;
-        if (this.sellIn < 0) {
-            if (this.quality < 50) {
-                this.quality = this.quality + 1;
-            }
-        }
+        decreaseSellIn();
+        increaseQuality();
     }
+
+    private void decreaseSellIn() {
+        this.sellIn = this.sellIn - 1;
+    }
+
+    private void increaseQuality() {
+        Quality quality = new Quality(this.quality);
+        if (this.sellIn < 0) {
+            quality.increase(2);
+        } else {
+            quality.increase(1);
+        }
+        this.quality = quality.value;
+    }
+
 }

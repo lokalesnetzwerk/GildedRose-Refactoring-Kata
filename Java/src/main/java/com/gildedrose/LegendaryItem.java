@@ -6,7 +6,6 @@ public class LegendaryItem extends Item implements Updateable {
         super(name, sellIn.value, quality.value);
     }
 
-
     @Override
     public void updateQuality() {
         System.out.println("SULFURAS DOES NOT CHANGE QUALITY!");

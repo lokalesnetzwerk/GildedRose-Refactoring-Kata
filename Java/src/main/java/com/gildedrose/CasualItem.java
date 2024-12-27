@@ -7,14 +7,21 @@ public class CasualItem extends Item implements Updateable {
 
     @Override
     public void updateQuality() {
-        if (this.quality > 0) {
-            this.quality = this.quality - 1;
-        }
+        decreaseSellIn();
+        decreaseQuality();
+    }
+
+    private void decreaseSellIn() {
         this.sellIn = this.sellIn - 1;
+    }
+
+    private void decreaseQuality() {
+        Quality quality = new Quality(this.quality);
         if (this.sellIn < 0) {
-            if (this.quality > 0) {
-                this.quality = this.quality - 1;
-            }
+            quality.decrease(2);
+        } else {
+            quality.decrease(1);
         }
+        this.quality = quality.value;
     }
 }

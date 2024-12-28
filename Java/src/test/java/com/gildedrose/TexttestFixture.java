@@ -5,16 +5,16 @@ public class TexttestFixture {
         System.out.println("OMGHAI!");
 
         Item[] items = new Item[]{
-            new Item("+5 Dexterity Vest", 10, 20), //
-            new CheeseItem("Aged Brie", new SellIn(2), new Quality(0)), //
-            new Item("Elixir of the Mongoose", 5, 7), //
-            new LegendaryItem("Sulfuras, Hand of Ragnaros", new SellIn(0), new Quality(80)), //
-            new LegendaryItem("Sulfuras, Hand of Ragnaros", new SellIn(-1), new Quality(80)),
-            new TicketItem("Backstage passes to a TAFKAL80ETC concert", new SellIn(15), new Quality(20)),
-            new TicketItem("Backstage passes to a TAFKAL80ETC concert", new SellIn(10), new Quality(49)),
-            new TicketItem("Backstage passes to a TAFKAL80ETC concert", new SellIn(5), new Quality(49)),
+            ItemFactory.createItem("+5 Dexterity Vest", 10, 20), //
+            ItemFactory.createItem("Aged Brie", 2, 0), //
+            ItemFactory.createItem("Elixir of the Mongoose", 5, 7), //
+            ItemFactory.createItem("Sulfuras, Hand of Ragnaros", 0, 80), //
+            ItemFactory.createItem("Sulfuras, Hand of Ragnaros", -1, 80),
+            ItemFactory.createItem("Backstage passes to a TAFKAL80ETC concert", 15, 20),
+            ItemFactory.createItem("Backstage passes to a TAFKAL80ETC concert", 10, 49),
+            ItemFactory.createItem("Backstage passes to a TAFKAL80ETC concert", 5, 49),
             // this conjured item does not work properly yet
-            new Item("Conjured Mana Cake", 3, 6)};
+            ItemFactory.createItem("Conjured Mana Cake", 3, 6)};
 
         GildedRose app = new GildedRose(items);
 

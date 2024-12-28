@@ -13,16 +13,8 @@ class GildedRose {
                 ((LegendaryItem) item).dailyUpdate();
             } else if (item instanceof TicketItem) {
                 ((TicketItem) item).dailyUpdate();
-            } else if (item.name.equals("Aged Brie")) {
-                if (item.quality < 50) {
-                    item.quality = item.quality + 1;
-                }
-                item.sellIn = item.sellIn - 1;
-                if (item.sellIn < 0) {
-                    if (item.quality < 50) {
-                        item.quality = item.quality + 1;
-                    }
-                }
+            } else if (item instanceof CheeseItem) {
+                ((CheeseItem) item).dailyUpdate();
             } else {
                 if (item.quality > 0) {
                     item.quality = item.quality - 1;

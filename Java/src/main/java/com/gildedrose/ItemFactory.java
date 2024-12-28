@@ -9,6 +9,8 @@ public class ItemFactory {
             return new LegendaryItem(name, new SellIn(sellIn), new Quality(quality));
         } else if (name.equals("Backstage passes to a TAFKAL80ETC concert")) {
             return new TicketItem(name, new SellIn(sellIn), new Quality(quality));
+        } else if (name.equals("Aged Brie")) {
+            return new CheeseItem(name, new SellIn(sellIn), new Quality(quality));
         } else {
             return new Item(name, sellIn, quality);
         }

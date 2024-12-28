@@ -16,7 +16,9 @@ class GildedRoseTest {
     }
 
     private String updateItems(String name, Integer sellIn, Integer quality) {
-        Item[] items = new Item[]{new Item(name, sellIn, quality)};
+        Item[] items = new Item[]{
+            ItemFactory.createItem(name, sellIn, quality)
+        };
 
         GildedRose testee = new GildedRose(items);
         testee.updateQuality();
